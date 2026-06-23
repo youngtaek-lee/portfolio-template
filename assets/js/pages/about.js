@@ -221,7 +221,7 @@ const PageAbout = {
                 <h3 class="about-github__card-title">Contributions</h3>
               </div>
               <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" rel="noopener" class="about-github__link" aria-label="GitHub 프로필">
-                <img src="assets/images/github-icon.png" alt="GitHub" width="20" height="20">
+                <i class="devicon-github-original"></i>
               </a>
             </div>
             <div id="about-github-calendar"></div>

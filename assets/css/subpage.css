@@ -758,13 +758,9 @@ a.more-works__link:hover {
   opacity: 1;
 }
 
-.about-github__link img {
-  display: block;
-  filter: brightness(0) saturate(100%) invert(90%) sepia(18%) saturate(300%) hue-rotate(10deg);
-}
-
-[data-theme="summer"] .about-github__link img {
-  filter: brightness(0) saturate(100%);
+.about-github__link i {
+  font-size: 20px;
+  color: var(--color-text);
 }
 
 .about-github__wrap {

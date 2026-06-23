@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
-  <rect width="1600" height="1200" fill="#26252a"/>
-  <text x="800" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" fill="#8a8a93" letter-spacing="4">PROJECT IMAGE</text>
-  <text x="800" y="640" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#5a5a61">Replace with your own screenshot (1600×1200)</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2400" viewBox="0 0 1600 2400">
+  <rect width="1600" height="2400" fill="#26252a"/>
+  <text x="800" y="1180" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" fill="#8a8a93" letter-spacing="4">PROJECT IMAGE</text>
+  <text x="800" y="1240" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#5a5a61">Replace with your own full-page scroll capture (1600×2400)</text>
 </svg>

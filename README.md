@@ -43,7 +43,11 @@ HTML / CSS / Vanilla JS + GSAP 기반 웹 퍼블리셔·프론트엔드 포트�
 ### 5. Works 상세 페이지 — `assets/js/pages/works-detail.js`
 - 하단 CTA 이메일 (`mailto:hello@yourdomain.com`)
 
-### 6. 메타 정보 — `index.html` `<head>`
+### 6. Hobby 섹션 — `assets/js/animations.js`
+- `initHobbyPopcorn()`의 `ICONS` 배열에 본인이 좋아하는 것(브랜드 로고, 굿즈, 취미 아이콘 등)으로 교체하세요. 기본값은 `assets/images/hobby/`에 들어있는 예시 아이콘입니다.
+- 저작권이 있는 브랜드 로고를 쓸 경우, 해당 브랜드 사용 정책을 직접 확인하세요.
+
+### 7. 메타 정보 — `index.html` `<head>`
 - `<title>`, `description`, `og:title`, `og:description`
 - `og:image`는 현재 주석 처리되어 있습니다. 1200×630 이미지를 추가하고 주석을 해제하세요.
 

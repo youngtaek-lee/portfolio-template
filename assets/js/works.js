@@ -3,7 +3,7 @@
 // =============================
 const works = [
   {
-    id: 'project-one', title: 'Project One', name: 'Lorem Ipsum', category: 'Food & Beverage', year: 2024,
+    id: 'project-one', title: 'Project One', name: 'Lorem Ipsum', category: 'Food & Beverage', year: 2026,
     main: 'assets/images/works/placeholder-a.svg',
     url: '#',
     subtitle: 'Write a one-line project intro here',
@@ -16,7 +16,7 @@ const works = [
     ],
   },
   {
-    id: 'project-two', title: 'Project Two', name: 'Lorem Ipsum', category: 'Electronics', year: 2024,
+    id: 'project-two', title: 'Project Two', name: 'Lorem Ipsum', category: 'Electronics', year: 2026,
     main: 'assets/images/works/placeholder-b.svg',
     url: '#',
     subtitle: 'Write a one-line project intro here',
@@ -29,7 +29,7 @@ const works = [
     ],
   },
   {
-    id: 'project-three', title: 'Project Three', name: 'Lorem Ipsum', category: 'IT · Embedded', year: 2023,
+    id: 'project-three', title: 'Project Three', name: 'Lorem Ipsum', category: 'IT · Embedded', year: 2025,
     main: 'assets/images/works/placeholder-c.svg',
     url: '#',
     subtitle: 'Write a one-line project intro here',
@@ -42,7 +42,7 @@ const works = [
     ],
   },
   {
-    id: 'project-four', title: 'Project Four', name: 'Lorem Ipsum', category: 'Materials', year: 2024,
+    id: 'project-four', title: 'Project Four', name: 'Lorem Ipsum', category: 'Materials', year: 2025,
     main: 'assets/images/works/placeholder-d.svg',
     url: '#',
     subtitle: 'Write a one-line project intro here',
@@ -55,7 +55,7 @@ const works = [
     ],
   },
   {
-    id: 'project-five', title: 'Project Five', name: 'Lorem Ipsum', category: 'Medical Device', year: 2023,
+    id: 'project-five', title: 'Project Five', name: 'Lorem Ipsum', category: 'Medical Device', year: 2025,
     main: 'assets/images/works/placeholder-a.svg',
     url: '#',
     subtitle: 'Write a one-line project intro here',
@@ -68,7 +68,7 @@ const works = [
     ],
   },
   {
-    id: 'project-six', title: 'Project Six', name: 'Lorem Ipsum', category: 'Advertising', year: 2023,
+    id: 'project-six', title: 'Project Six', name: 'Lorem Ipsum', category: 'Advertising', year: 2026,
     main: 'assets/images/works/placeholder-b.svg',
     url: '#',
     subtitle: 'Write a one-line project intro here',

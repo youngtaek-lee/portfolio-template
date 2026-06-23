@@ -4,7 +4,7 @@ const PageContact = {
       <div class="subpage contact-page">
 
         <section class="subpage__hero">
-          <h1 class="subpage__title">좋은 작업은<br>대화에서 시작됩니다.</h1>
+          <h1 class="subpage__title">Good work starts<br>with a conversation.</h1>
         </section>
 
         <section class="subpage__section contact-info">

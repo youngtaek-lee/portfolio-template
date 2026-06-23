@@ -1,5 +1,5 @@
 // =============================
-// Page Transition — 촤르륵
+// Page Transition — swoosh
 // =============================
 function initPageTransition() {
   const panel = document.createElement('div');

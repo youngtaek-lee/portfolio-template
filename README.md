@@ -1,59 +1,59 @@
 # Portfolio Template
 
-HTML / CSS / Vanilla JS + GSAP 기반 웹 퍼블리셔·프론트엔드 포트폴리오 템플릿입니다.
-빌드 도구 없이 정적 파일만으로 동작하며, 로컬 서버(Live Server 등)나 일반 호스팅 어디에나 그대로 올릴 수 있습니다.
+A web publisher / front-end portfolio template built with HTML / CSS / Vanilla JS + GSAP.
+No build tools required — it runs from static files alone, so you can serve it with a local server (Live Server, etc.) or deploy it to any static host as-is.
 
-## 구성
-- `index.html` — 홈 (Hero / About / Works 리스트)
-- `404.html` — GitHub Pages 등 정적 호스팅용 SPA 리다이렉트
-- `assets/css/` — 섹션별 분리된 스타일시트
-- `assets/js/` — 라우터, 애니메이션, 페이지별 렌더링 로직
-  - `assets/js/router.js` — `/`, `/about`, `/works`, `/works/:id` 클라이언트 사이드 라우팅
-  - `assets/js/works.js` — **프로젝트 데이터 (여기를 가장 먼저 수정하세요)**
-  - `assets/js/pages/` — About / Works List / Works Detail / Contact 페이지 렌더링
+## Structure
+- `index.html` — home (Hero / About / Works list)
+- `404.html` — SPA redirect fallback for static hosts like GitHub Pages
+- `assets/css/` — stylesheets split by section
+- `assets/js/` — router, animations, per-page rendering logic
+  - `assets/js/router.js` — client-side routing for `/`, `/about`, `/works`, `/works/:id`
+  - `assets/js/works.js` — **project data (edit this first)**
+  - `assets/js/pages/` — rendering for the About / Works List / Works Detail / Contact pages
 
-## 시작하기
-1. 정적 서버로 열기 (예: VSCode Live Server, `npx serve`, `python -m http.server`)
-2. `index.html`을 직접 `file://`로 열면 라우팅이 깨지므로 반드시 서버를 통해 접속하세요.
+## Getting started
+1. Open it through a static server (e.g. VSCode Live Server, `npx serve`, `python -m http.server`)
+2. Opening `index.html` directly via `file://` breaks routing — always access it through a server.
 
-## 내 정보로 교체하기 (체크리스트)
+## Replace-with-your-info checklist
 
-### 1. 프로젝트 데이터 — `assets/js/works.js`
-- `works` 배열: 각 프로젝트의 `title`, `name`(국문명), `category`, `year`, `main`(대표 이미지), `url`(실제 사이트 링크), `subtitle`, `overview`, `gallery`(상세페이지 이미지 목록)을 본인 작업물로 교체
-- `worksExtra` 배열: 외부 링크만 있는 간단한 프로젝트 목록
-- 이미지는 `assets/images/works/` 안에 추가하고 경로를 맞춰주세요. 현재는 `placeholder-*.svg` 자리표시자가 들어가 있습니다.
-- **주의**: `index.html`의 `<ul id="works-list">` 안 정적 HTML도 동일한 `id`/제목으로 맞춰야 홈 화면 리스트와 hover 썸네일이 정상 동작합니다 (`renderWorks()`는 기본적으로 꺼져 있고 정적 HTML을 사용합니다).
+### 1. Project data — `assets/js/works.js`
+- `works` array: replace `title`, `name` (localized name), `category`, `year`, `main` (cover image), `url` (live site link), `subtitle`, `overview`, and `gallery` (detail-page image list) with your own work.
+- `worksExtra` array: a simple list of projects that only need an external link.
+- Add images under `assets/images/works/` and update the paths. `placeholder-*.svg` files are in there as stand-ins for now.
+- **Note**: the static markup inside `<ul id="works-list">` in `index.html` must use the same `id`/title as your data, or the home list and hover thumbnail won't line up (`renderWorks()` is disabled by default in favor of the static HTML).
 
-### 2. 개인 정보 — `index.html`
-- 헤더 로고 (`header__logo` 안 `Your / Name / Here.`)
-- Hero 태그라인 (`hero__tagline` — `YOUR NAME`)
-- About 한 줄 소개 (`about-text__summary`)
-- SNS 링크 (헤더, 메뉴, 푸터에 각각 GitHub/Instagram/LinkedIn/Blog `href="#"`로 비워둔 부분)
-- 이메일 (`mailto:hello@yourdomain.com` — 여러 곳에 반복됨, 전체 찾아바꾸기 권장)
-- 푸터 카피라이트 문구
+### 2. Personal info — `index.html`
+- Header logo (`Your / Name / Here.` inside `header__logo`)
+- Hero tagline (`hero__tagline` — `YOUR NAME`)
+- About one-liner (`about-text__summary`)
+- Social links (the empty `href="#"` GitHub/Instagram/LinkedIn/Blog links in the header, menu, and footer)
+- Email (`mailto:hello@yourdomain.com` — repeated in several places; a find-and-replace across the project is recommended)
+- Footer copyright line
 
-### 3. About 페이지 — `assets/js/pages/about.js`
-- 자기소개 문단 (`about-intro__text`)
-- `GITHUB_USERNAME` 상수 — GitHub Contributions 캘린더에 표시할 계정명
-- Work Process 섹션 텍스트, Skills 카드 목록
+### 3. About page — `assets/js/pages/about.js`
+- Intro paragraph (`about-intro__text`)
+- `GITHUB_USERNAME` constant — the account shown in the GitHub Contributions calendar
+- Work Process section copy, Skills card list
 
-### 4. Contact 페이지 — `assets/js/pages/contact.js`
-- 이메일 / SNS 링크
+### 4. Contact page — `assets/js/pages/contact.js`
+- Email / social links
 
-### 5. Works 상세 페이지 — `assets/js/pages/works-detail.js`
-- 하단 CTA 이메일 (`mailto:hello@yourdomain.com`)
+### 5. Works detail page — `assets/js/pages/works-detail.js`
+- Bottom CTA email (`mailto:hello@yourdomain.com`)
 
-### 6. Hobby 섹션 — `assets/js/animations.js`
-- `initHobbyPopcorn()`의 `ICONS` 배열에 본인이 좋아하는 것을 채우세요. 기본값은 Font Awesome 아이콘(별, 하트, 음악 등) 예시입니다.
-- Font Awesome 아이콘 클래스명을 바꾸거나(`fa-solid fa-xxx`), 브랜드 로고 이미지(`<img>`)로 바꿔도 됩니다. 브랜드 로고를 쓸 경우 해당 브랜드 사용 정책을 직접 확인하세요.
+### 6. Hobby section — `assets/js/animations.js`
+- Fill the `ICONS` array inside `initHobbyPopcorn()` with things you're into. The defaults are Font Awesome icon examples (star, heart, music, etc.).
+- You can swap the Font Awesome class names (`fa-solid fa-xxx`), or replace them with brand-logo `<img>` tags. If you use brand logos, check that brand's usage policy yourself.
 
-### 7. 메타 정보 — `index.html` `<head>`
+### 7. Meta info — `index.html` `<head>`
 - `<title>`, `description`, `og:title`, `og:description`
-- `og:image`는 기본 예시 이미지(`assets/images/og-image.jpg`)가 들어있습니다. 본인 작업물 캡처로 교체하세요 (1200×630 권장).
-- `favicon`(`assets/images/favicon.svg`)도 본인 로고/이니셜로 교체하면 좋습니다.
+- `og:image` ships with a default example image (`assets/images/og-image.jpg`). Replace it with a screenshot of your own work (1200×630 recommended).
+- It's also worth swapping the `favicon` (`assets/images/favicon.svg`) for your own logo or initials.
 
-## 테마
-헤더의 토글 스위치로 다크/서머(라이트 톤) 테마를 전환할 수 있습니다. 색상 변수는 `assets/css/base.css`의 `:root` / `[data-theme="..."]`에서 관리합니다.
+## Theme
+The toggle switch in the header switches between a dark theme and a "summer" (light-toned) theme. Color variables live in `:root` / `[data-theme="..."]` inside `assets/css/base.css`.
 
-## 라이선스
-`LICENSE.txt` 참고. 개인/단일 프로젝트 사용은 자유롭게 가능하지만, 템플릿 자체의 재판매·재배포는 금지됩니다.
+## License
+See `LICENSE.txt`. Free to use for personal or single-project work; reselling or redistributing the template itself is not allowed.

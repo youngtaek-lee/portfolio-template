@@ -1,5 +1,5 @@
 // =============================
-// Skills 데이터 + 렌더링
+// Skills data + rendering
 // =============================
 const ICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/';
 

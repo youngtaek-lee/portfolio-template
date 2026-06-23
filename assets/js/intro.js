@@ -1,5 +1,5 @@
 // =============================
-// Intro — 스파클 → 인트로 UP + 메인 딸려올라옴
+// Intro — sparkle → intro slides up, dragging the main content with it
 // =============================
 function initIntro() {
   const intro  = document.getElementById('intro');
@@ -14,17 +14,17 @@ function initIntro() {
 
   document.body.style.overflow = 'hidden';
 
-  // 오렌지 트레일 레이어 — 인트로 바로 뒤에서 살짝 늦게 따라올라감
+  // orange trail layer — follows just behind the intro, slightly delayed
   const trail = document.createElement('div');
   trail.style.cssText = 'position:fixed;inset:0;background:var(--intro-trail-bg);z-index:99989;pointer-events:none;';
   document.body.appendChild(trail);
 
-  // hero-wrap은 ScrollTrigger trigger라 건드리지 않고, 내부 .hero(section)만 이동
-  // intro가 fixed로 덮여있어 클립 없어도 됨
+  // hero-wrap is the ScrollTrigger trigger so leave it alone — only move the inner .hero section
+  // intro is covered with position: fixed, so no clipping needed
   const heroSection = document.querySelector('.hero');
   if (heroSection) gsap.set(heroSection, { y: 160, opacity: 0 });
 
-  // 탭 비활성 중 인트로가 멈춘 채 복귀하면 즉시 스킵
+  // if the intro is still frozen when the tab regains focus, skip it immediately
   const skipIntro = () => {
     document.removeEventListener('visibilitychange', onVisible);
     tl.kill();

@@ -24,12 +24,12 @@ function initPerspectiveGrid() {
     mouseY = -999;
   });
 
-  // 라인별 고정 개성값 (랜덤처럼 보이되 안정적으로)
+  // fixed per-line character values (look random but stay stable)
   const LINE_COUNT = 36;
   const lines = Array.from({ length: LINE_COUNT }, (_, l) => ({
-    amp:   14 + Math.sin(l * 2.3) * 8,       // 진폭 10~22
-    freq:  0.005 + Math.cos(l * 1.7) * 0.002, // 주파수 미세 차이
-    speed: 0.9 + Math.sin(l * 0.9) * 0.4,     // 속도 0.5~1.3배
+    amp:   14 + Math.sin(l * 2.3) * 8,       // amplitude 10~22
+    freq:  0.005 + Math.cos(l * 1.7) * 0.002, // slight frequency variance
+    speed: 0.9 + Math.sin(l * 0.9) * 0.4,     // speed 0.5~1.3x
     phase: l * 0.5,
   }));
 

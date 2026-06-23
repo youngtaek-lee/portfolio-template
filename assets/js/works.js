@@ -1,13 +1,13 @@
 // =============================
-// 프로젝트 데이터 — 실제 작업물로 교체하세요
+// Project data — replace with your own work
 // =============================
 const works = [
   {
-    id: 'project-one', title: 'Project One', name: '프로젝트 원', category: 'Food & Beverage', year: 2024,
+    id: 'project-one', title: 'Project One', name: 'Food & Beverage', category: 'Food & Beverage', year: 2024,
     main: 'assets/images/works/placeholder-a.svg',
     url: '#',
-    subtitle: '여기에 프로젝트 한 줄 소개를 작성하세요',
-    overview: '프로젝트에 대한 개요를 작성하세요. 어떤 클라이언트와 어떤 문제를 어떻게 풀어냈는지, 비주얼 방향과 구현 포인트를 간단히 설명합니다.',
+    subtitle: 'Write a one-line project intro here',
+    overview: 'Write a short project overview here — who the client was, what problem you solved, and your visual direction and key implementation points.',
     gallery: [
       'assets/images/works/placeholder-a.svg',
       'assets/images/works/placeholder-b.svg',
@@ -16,11 +16,11 @@ const works = [
     ],
   },
   {
-    id: 'project-two', title: 'Project Two', name: '프로젝트 투', category: 'Electronics', year: 2024,
+    id: 'project-two', title: 'Project Two', name: 'Electronics', category: 'Electronics', year: 2024,
     main: 'assets/images/works/placeholder-b.svg',
     url: '#',
-    subtitle: '여기에 프로젝트 한 줄 소개를 작성하세요',
-    overview: '프로젝트에 대한 개요를 작성하세요. 어떤 클라이언트와 어떤 문제를 어떻게 풀어냈는지, 비주얼 방향과 구현 포인트를 간단히 설명합니다.',
+    subtitle: 'Write a one-line project intro here',
+    overview: 'Write a short project overview here — who the client was, what problem you solved, and your visual direction and key implementation points.',
     gallery: [
       'assets/images/works/placeholder-a.svg',
       'assets/images/works/placeholder-b.svg',
@@ -29,11 +29,11 @@ const works = [
     ],
   },
   {
-    id: 'project-three', title: 'Project Three', name: '프로젝트 쓰리', category: 'IT · Embedded', year: 2023,
+    id: 'project-three', title: 'Project Three', name: 'IT · Embedded', category: 'IT · Embedded', year: 2023,
     main: 'assets/images/works/placeholder-c.svg',
     url: '#',
-    subtitle: '여기에 프로젝트 한 줄 소개를 작성하세요',
-    overview: '프로젝트에 대한 개요를 작성하세요. 어떤 클라이언트와 어떤 문제를 어떻게 풀어냈는지, 비주얼 방향과 구현 포인트를 간단히 설명합니다.',
+    subtitle: 'Write a one-line project intro here',
+    overview: 'Write a short project overview here — who the client was, what problem you solved, and your visual direction and key implementation points.',
     gallery: [
       'assets/images/works/placeholder-a.svg',
       'assets/images/works/placeholder-b.svg',
@@ -42,11 +42,11 @@ const works = [
     ],
   },
   {
-    id: 'project-four', title: 'Project Four', name: '프로젝트 포', category: 'Materials', year: 2024,
+    id: 'project-four', title: 'Project Four', name: 'Materials', category: 'Materials', year: 2024,
     main: 'assets/images/works/placeholder-d.svg',
     url: '#',
-    subtitle: '여기에 프로젝트 한 줄 소개를 작성하세요',
-    overview: '프로젝트에 대한 개요를 작성하세요. 어떤 클라이언트와 어떤 문제를 어떻게 풀어냈는지, 비주얼 방향과 구현 포인트를 간단히 설명합니다.',
+    subtitle: 'Write a one-line project intro here',
+    overview: 'Write a short project overview here — who the client was, what problem you solved, and your visual direction and key implementation points.',
     gallery: [
       'assets/images/works/placeholder-a.svg',
       'assets/images/works/placeholder-b.svg',
@@ -55,11 +55,11 @@ const works = [
     ],
   },
   {
-    id: 'project-five', title: 'Project Five', name: '프로젝트 파이브', category: 'Medical Device', year: 2023,
+    id: 'project-five', title: 'Project Five', name: 'Medical Device', category: 'Medical Device', year: 2023,
     main: 'assets/images/works/placeholder-a.svg',
     url: '#',
-    subtitle: '여기에 프로젝트 한 줄 소개를 작성하세요',
-    overview: '프로젝트에 대한 개요를 작성하세요. 어떤 클라이언트와 어떤 문제를 어떻게 풀어냈는지, 비주얼 방향과 구현 포인트를 간단히 설명합니다.',
+    subtitle: 'Write a one-line project intro here',
+    overview: 'Write a short project overview here — who the client was, what problem you solved, and your visual direction and key implementation points.',
     gallery: [
       'assets/images/works/placeholder-a.svg',
       'assets/images/works/placeholder-b.svg',
@@ -68,11 +68,11 @@ const works = [
     ],
   },
   {
-    id: 'project-six', title: 'Project Six', name: '프로젝트 식스', category: 'Advertising', year: 2023,
+    id: 'project-six', title: 'Project Six', name: 'Advertising', category: 'Advertising', year: 2023,
     main: 'assets/images/works/placeholder-b.svg',
     url: '#',
-    subtitle: '여기에 프로젝트 한 줄 소개를 작성하세요',
-    overview: '프로젝트에 대한 개요를 작성하세요. 어떤 클라이언트와 어떤 문제를 어떻게 풀어냈는지, 비주얼 방향과 구현 포인트를 간단히 설명합니다.',
+    subtitle: 'Write a one-line project intro here',
+    overview: 'Write a short project overview here — who the client was, what problem you solved, and your visual direction and key implementation points.',
     gallery: [
       'assets/images/works/placeholder-a.svg',
       'assets/images/works/placeholder-b.svg',
@@ -82,7 +82,7 @@ const works = [
   },
 ];
 
-// 자투리 프로젝트 — 이름 + 외부링크만 (없으면 url 생략)
+// Extra projects — name + external link only (omit url if none)
 const worksExtra = [
   { name: 'Project Seven', url: '#' },
   { name: 'Project Eight', url: '#' },
@@ -91,7 +91,7 @@ const worksExtra = [
 ];
 
 // =============================
-// Works 리스트 스파클 마크
+// Works list sparkle mark
 // =============================
 function initWorksSparkle() {
   const SPARKLE_SVG = `<svg class="works__sparkle" viewBox="-1.1 -1.1 2.2 2.2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0,-1 L0.092,-0.092 L1,0 L0.092,0.092 L0,1 L-0.092,0.092 L-1,0 L-0.092,-0.092 Z" fill="currentColor"/></svg>`;
@@ -101,7 +101,7 @@ function initWorksSparkle() {
 }
 
 // =============================
-// Works 썸네일 hover (정적 HTML용)
+// Works thumbnail hover (for static HTML)
 // =============================
 function initWorksThumb() {
   const thumb = document.getElementById('works-thumb');
@@ -134,7 +134,7 @@ function initWorksThumb() {
 }
 
 // =============================
-// Works 렌더링 — 라인 리스트
+// Works rendering — line list
 // =============================
 function renderWorks() {
   const list  = document.getElementById('works-list');
@@ -166,7 +166,7 @@ function renderWorks() {
     list.appendChild(li);
   });
 
-  // 썸네일 커서 따라다니기
+  // Thumbnail follows cursor
   if (thumb) {
     document.addEventListener('mousemove', (e) => {
       gsap.to(thumb, {

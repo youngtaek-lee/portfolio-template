@@ -61,7 +61,7 @@
   --color-border-strong:  rgba(237, 217, 192, 0.65);
   --color-border:         var(--color-line);
 
-  /* 서브페이지 — basic 메인과 반대로 항상 라이트 고정 */
+  /* subpage — always light, opposite of the basic theme's main */
   --subpage-bg:             var(--basic-beige);
   --subpage-text:           var(--basic-dark);
   --subpage-accent:         var(--basic-orange);
@@ -110,7 +110,7 @@
   --color-border-strong:  rgba(21, 25, 31, 0.65);
   --color-border:         var(--color-line);
 
-  /* 서브페이지 — summer는 메인과 방향이 같아 글로벌 토큰 그대로 사용 */
+  /* subpage — summer matches the main's direction, so it just uses the global tokens */
   --subpage-bg:             var(--color-bg);
   --subpage-text:           var(--color-text);
   --subpage-accent:         var(--color-accent);

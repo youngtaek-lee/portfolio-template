@@ -23,7 +23,7 @@ const Router = {
 
     window.addEventListener('popstate', () => this.render(location.pathname, true));
 
-    this.render(location.pathname, true);  // 초기 로드: 전환 없으므로 즉시
+    this.render(location.pathname, true);  // initial load: no transition, render immediately
   },
 
   navigate(path) {
@@ -81,7 +81,7 @@ const Router = {
     this.subpageView.innerHTML     = '';
     this.subpageView.setAttribute('aria-hidden', 'true');
     requestAnimationFrame(() => {
-      // gsap.set 우선순위 초기화 → onRefresh에서 tl이 올바른 색상으로 덮어쓸 수 있도록
+      // reset gsap.set priority → so the timeline in onRefresh can overwrite it with the correct color
       gsap.set(['.header__logo', '.header__nav', '.header__nav-btn', '.header__menu-btn', '.menu-btn'],
         { clearProps: 'color,borderColor' });
       if (typeof window.__heroTaglineRebuild === 'function') window.__heroTaglineRebuild();
@@ -105,12 +105,12 @@ const Router = {
     if (immediate) {
       runInit();
     } else {
-      // 패널 슬라이드아웃 시작(onMid +0.1s)에 맞춰 실행 — 패널이 빠지면서 애니메이션이 드러남
+      // runs in sync with the panel slide-out start (onMid +0.1s) — the animation reveals as the panel slides away
       this._pendingReveal = null;
       setTimeout(runInit, 100);
     }
 
-    // footer 등 공유 요소의 ScrollTrigger 위치를 서브페이지 레이아웃 기준으로 재계산
+    // recalculate ScrollTrigger positions for shared elements like the footer, based on the subpage layout
     requestAnimationFrame(() => {
       if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
       window.__lenis?.resize();

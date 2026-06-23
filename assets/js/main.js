@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load' });
 
-  // GitHub Pages SPA redirect 처리
+  // handle the GitHub Pages SPA redirect
   const redirect = sessionStorage.getItem('spa-redirect');
   if (redirect) {
     sessionStorage.removeItem('spa-redirect');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPageTransition();
   Router.init();
 
-  // renderWorks(); // 정적 HTML로 대체 중
+  // renderWorks(); // currently superseded by static HTML
   initWorksThumb();
   initWorksSparkle();
   initCursor();

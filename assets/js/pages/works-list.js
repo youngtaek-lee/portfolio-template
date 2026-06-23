@@ -93,7 +93,7 @@ const PageWorksList = {
       });
     });
 
-    // 썸네일 hover
+    // thumbnail hover
     const thumb = document.querySelector('#subpage-view .works__thumb');
     if (thumb) {
       document.querySelectorAll('#subpage-view .works__item').forEach(li => {

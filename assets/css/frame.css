@@ -480,7 +480,7 @@ main {
   overflow: visible;
 }
 
-/* summer 푸터: 쿨 그레이 배경 + 로얄 텍스트 */
+/* summer footer: cool gray background + royal blue text */
 [data-theme="summer"] .footer,
 [data-theme="summer"] .statement {
   --color-text: var(--summer-royal);
@@ -741,7 +741,7 @@ main {
 }
 
 /* =============================
-   Statement (footer 높이 spacer)
+   Statement (footer height spacer)
 ============================= */
 .statement {
   min-height: var(--footer-height);
@@ -821,7 +821,7 @@ main {
     width: 100%;
   }
 
-  /* 팝콘 아이콘 좌우 overflow → 가로 스크롤 원인 차단 */
+  /* prevent the popcorn icons' left/right overflow from causing horizontal scroll */
   .hobby-section {
     overflow-x: clip;
   }

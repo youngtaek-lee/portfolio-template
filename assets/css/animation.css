@@ -1,6 +1,6 @@
 /* =============================
-   글자 분해 (split-text)
-   — 애니메이션은 GSAP이 처리
+   Character splitting (split-text)
+   — animation is handled by GSAP
 ============================= */
 .char {
   display: inline-block;

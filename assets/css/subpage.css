@@ -100,152 +100,6 @@ body.is-subpage {
   }
 }
 
-/* ── Process Cards — 구 디자인 (주석 보관) ── */
-/* TODO: 새 디자인으로 교체 예정
-.process-card__icon svg .cs {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.process-card:hover .process-card__icon svg .cs {
-  opacity: 1;
-}
-.process-card__icon svg .cm {
-  transition: transform 0.3s ease;
-}
-.process-card:hover .process-card__icon svg .cm {
-  transform: translate(1px, -1px);
-}
-.process-card__icon svg path.ch {
-  fill: var(--subpage-bg);
-  transition: fill 0.3s ease;
-}
-.process-card:hover .process-card__icon svg path.ch {
-  fill: var(--color-accent);
-}
-
-.process-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.process-card {
-  position: relative;
-  padding: 36px 24px;
-  background: var(--subpage-surface);
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 16px;
-}
-
-.process-card__border {
-  position: absolute;
-  inset: 8px;
-  width: calc(100% - 16px);
-  height: calc(100% - 16px);
-  pointer-events: none;
-  overflow: visible;
-}
-
-.process-card__border-rect {
-  fill: none;
-  stroke: var(--basic-beige);
-  stroke-width: 1;
-  stroke-dasharray: 6 4;
-  stroke-dashoffset: 5;
-  transition: stroke 0.45s ease, stroke-dasharray 0.45s ease, stroke-dashoffset 0.45s ease;
-}
-
-.process-card:hover .process-card__border-rect {
-  stroke: var(--basic-orange);
-  stroke-dasharray: 10 0;
-  stroke-dashoffset: 0;
-}
-
-.process-card__icon {
-  width: 80px;
-  height: 80px;
-  color: var(--subpage-text);
-}
-
-.process-card__icon svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.process-card__title {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--subpage-text);
-}
-
-.process-card__desc {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--subpage-sub);
-  line-height: 1.7;
-}
-
-.pc-scan {
-  animation: pcScan 2.5s ease-in-out infinite;
-  transform-origin: center;
-}
-@keyframes pcScan {
-  0%, 100% { transform: translateY(-8px); opacity: 0.4; }
-  50%       { transform: translateY(8px);  opacity: 1; }
-}
-
-.pc-bracket-l {
-  animation: pcBracketL 2s ease-in-out infinite;
-}
-.pc-bracket-r {
-  animation: pcBracketR 2s ease-in-out infinite;
-}
-@keyframes pcBracketL {
-  0%, 100% { transform: translateX(0); }
-  50%       { transform: translateX(-4px); }
-}
-@keyframes pcBracketR {
-  0%, 100% { transform: translateX(0); }
-  50%       { transform: translateX(4px); }
-}
-
-.pc-ripple1 {
-  animation: pcRipple 2s ease-out infinite;
-}
-.pc-ripple2 {
-  animation: pcRipple 2s ease-out infinite 0.4s;
-}
-@keyframes pcRipple {
-  0%   { r: 4; opacity: 1; }
-  100% { r: 12; opacity: 0; }
-}
-
-.pc-gear {
-  transform-origin: 24px 24px;
-  animation: pcGear 4s linear infinite;
-}
-.pc-gear-ring {
-  transform-origin: 24px 24px;
-  animation: pcGear 6s linear infinite reverse;
-}
-@keyframes pcGear {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-@media (max-width: 768px) {
-  .process-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-*/
-
 .skill-cards {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -811,7 +665,7 @@ a.more-works__link:hover {
 }
 
 /* =============================
-   Mobile — 공통 간격
+   Mobile — shared spacing
 ============================= */
 @media (max-width: 768px) {
   .subpage {
@@ -834,7 +688,7 @@ a.more-works__link:hover {
     margin-bottom: 20px;
   }
 
-  /* more-works 버튼 */
+  /* more-works button */
   .more-works__link {
     padding: 8px 14px;
     font-size: 0.8rem;
@@ -846,7 +700,7 @@ a.more-works__link:hover {
     transform: translate(3px, 3px);
   }
 
-  /* Works 상세 */
+  /* Works detail */
   .wd-subtitle {
     font-size: 1rem;
     line-height: 1.6;

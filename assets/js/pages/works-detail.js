@@ -5,7 +5,7 @@ const PageWorksDetail = {
     const idx   = list.findIndex(w => w.id === id);
     const work  = idx !== -1 ? list[idx] : null;
 
-    if (!work) return `<div class="subpage"><p style="padding:120px 40px">프로젝트를 찾을 수 없습니다.</p></div>`;
+    if (!work) return `<div class="subpage"><p style="padding:120px 40px">Project not found.</p></div>`;
 
     const prev = list[(idx - 1 + list.length) % list.length];
     const next = list[(idx + 1) % list.length];
@@ -32,10 +32,10 @@ const PageWorksDetail = {
           return `
         <section class="wd-gallery">
           <div class="wd-gallery__col">
-            ${col1.map(img => `<img src="${img}" alt="${work.title} 갤러리">`).join('')}
+            ${col1.map(img => `<img src="${img}" alt="${work.title} gallery">`).join('')}
           </div>
           <div class="wd-gallery__col">
-            ${col2.map(img => `<img src="${img}" alt="${work.title} 갤러리">`).join('')}
+            ${col2.map(img => `<img src="${img}" alt="${work.title} gallery">`).join('')}
             ${work.url ? `
             <a href="${work.url}" target="_blank" rel="noopener" class="wd-gallery__next">
               <span class="wd-gallery__next-title">VIEW SITE</span>
@@ -74,7 +74,7 @@ const PageWorksDetail = {
     const id   = path.replace('/works/', '');
     const work = typeof works !== 'undefined' ? works.find(w => w.id === id) : null;
 
-    // bottom-nav 교체
+    // swap bottom-nav
     const links = document.querySelector('.bottom-nav__links');
     if (links && work?.url) {
       Router._originalBottomLinks = links.innerHTML;
@@ -114,7 +114,7 @@ const PageWorksDetail = {
       scrollTrigger: { trigger: '.wd-nav', start: 'top 90%' },
     });
 
-    // 이미지 로드 후 next 카드 짧은 칼럼으로 이동 + 높이 재계산
+    // after images load, move the next card to the shorter column + recalc height
     const imgs = document.querySelectorAll('.works-detail-page img');
     let loaded = 0;
     const onLoad = () => {
@@ -122,7 +122,7 @@ const PageWorksDetail = {
       if (loaded === imgs.length) {
         const cols = document.querySelectorAll('.wd-gallery__col');
         const nextCard = document.querySelector('.wd-gallery__next');
-        // 갤러리 이미지 ScrollTrigger — 이미지 로드 후 레이아웃 확정된 시점에 등록
+        // gallery image ScrollTrigger — registered once layout is settled after images load
         document.querySelectorAll('.wd-gallery img').forEach(img => {
           gsap.from(img, {
             y: 40, opacity: 0, duration: 0.8, ease: 'power2.out',

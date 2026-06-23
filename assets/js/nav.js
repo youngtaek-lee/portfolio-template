@@ -98,12 +98,12 @@ function initTheme() {
   }));
 }
 
-// 콘솔에서 window.debugWorksAnim() 호출 — /works 진입 직후에 바로 실행
-// works__item의 x/opacity가 시간에 따라 실제로 움직이는지, 충돌하는 트윈이 있는지 확인
+// call window.debugWorksAnim() from the console — run it right after entering /works
+// checks whether .works__item's x/opacity actually change over time, and whether any tweens conflict
 function debugWorksAnim() {
   const items = document.querySelectorAll('#subpage-view .works__item');
   if (!items.length) {
-    console.warn('[debugWorksAnim] .works__item을 찾을 수 없습니다 — /works 페이지에서 호출하세요.');
+    console.warn('[debugWorksAnim] No .works__item found — call this from the /works page.');
     return;
   }
   const target = items[0];
@@ -128,8 +128,8 @@ function debugWorksAnim() {
 }
 window.debugWorksAnim = debugWorksAnim;
 
-// 콘솔에서 window.debugTheme() 로도 수동 호출 가능
-// 테마 변수와 실제 엘리먼트에 찍힌 색을 비교해서 어긋난 부분을 찾는 용도
+// can also be called manually from the console via window.debugTheme()
+// compares theme variables against the colors actually applied to elements to find mismatches
 function debugTheme() {
   const theme = document.documentElement.getAttribute('data-theme');
   const rootStyle = getComputedStyle(document.documentElement);
@@ -147,7 +147,7 @@ function debugTheme() {
 
   const elementRows = targets.map(({ label, selector, prop }) => {
     const el = document.querySelector(selector);
-    if (!el) return { label, selector, value: '(엘리먼트 없음)' };
+    if (!el) return { label, selector, value: '(element not found)' };
     return { label, selector, value: getComputedStyle(el)[prop] };
   });
 
@@ -160,7 +160,7 @@ function debugTheme() {
 window.debugTheme = debugTheme;
 
 // =============================
-// Lenis 스무스 스크롤
+// Lenis smooth scroll
 // =============================
 function initLenis() {
   const lenis = new Lenis({

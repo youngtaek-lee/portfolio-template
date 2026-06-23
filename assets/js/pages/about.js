@@ -1,4 +1,4 @@
-const GITHUB_USERNAME = 'yourusername'; // GitHub Contributions 캘린더에 표시할 계정명
+const GITHUB_USERNAME = 'yourusername'; // account name shown in the GitHub Contributions calendar
 
 async function buildGithubCalendar(el, calAnim) {
   const CELL = 14, GAP = 3, STEP = 17, LABEL_H = 22;
@@ -25,7 +25,7 @@ async function buildGithubCalendar(el, calAnim) {
     contributions = json.contributions.filter(c => new Date(c.date + 'T00:00:00') >= cutoff);
     if (!contributions?.length) throw new Error();
   } catch {
-    el.innerHTML = '<p style="opacity:0.4;font-size:0.8rem">데이터를 불러올 수 없습니다.</p>';
+    el.innerHTML = '<p style="opacity:0.4;font-size:0.8rem">Couldn\'t load data.</p>';
     return;
   }
 
@@ -33,10 +33,10 @@ async function buildGithubCalendar(el, calAnim) {
   const dayMap = new Map(contributions.map(c => [c.date, c]));
   const firstDate = new Date(contributions[0].date + 'T00:00:00');
   const lastDate = new Date(contributions[contributions.length - 1].date + 'T00:00:00');
-  // 첫째 날이 속한 주의 일요일로 시작
+  // start from the Sunday of the week containing the first day
   const gridStart = new Date(firstDate);
   gridStart.setDate(gridStart.getDate() - gridStart.getDay());
-  // 마지막 날이 속한 주의 토요일로 끝
+  // end on the Saturday of the week containing the last day
   const gridEnd = new Date(lastDate);
   gridEnd.setDate(gridEnd.getDate() + (6 - gridEnd.getDay()));
 
@@ -98,7 +98,7 @@ async function buildGithubCalendar(el, calAnim) {
     if (!rowMap.has(y)) rowMap.set(y, []);
     rowMap.get(y).push(r);
   });
-  // 아래 행부터 등장 (y값 내림차순)
+  // rows appear from the bottom (descending y)
   const rows = [...rowMap.entries()]
     .sort((a, b) => parseFloat(b[0]) - parseFloat(a[0]))
     .map(([, rs]) => rs);
@@ -131,7 +131,7 @@ const PageAbout = {
         <section class="subpage__hero">
           <h1 class="subpage__title">Hello</h1>
           <div class="about-intro__text">
-            <p>안녕하세요, 홍길동입니다.<br>웹퍼블리셔로 일하며 디자인과 코드 사이 어딘가에 서 있습니다.<br>시각적인 것을 정확하게 구현하는 데 집착하고,<br>요즘은 그 경계를 허물며 프론트엔드 개발자로 영역을 넓혀가는 중입니다.<br>같이 만들어보고 싶은 게 있다면 연락주세요.</p>
+            <p>Hi, I'm a web publisher<br>standing somewhere between design and code.<br>I'm obsessive about implementing visuals with precision,<br>and lately I've been pushing into front-end development to widen that ground.<br>If you've got something worth building together, reach out.</p>
           </div>
         </section>
 
@@ -154,16 +154,16 @@ const PageAbout = {
 
             <div class="ptl__chart">
               <div class="ptl__bar ptl__bar--1">
-                <span class="ptl__bar-name">디자인 해석</span>
-                <span class="ptl__bar-desc">시안 검토, 구조 파악, 에셋 정리</span>
+                <span class="ptl__bar-name">Design Review</span>
+                <span class="ptl__bar-desc">Reviewing mockups, mapping structure, organizing assets</span>
               </div>
               <div class="ptl__bar ptl__bar--2">
-                <span class="ptl__bar-name">마크업 & 퍼블리싱</span>
-                <span class="ptl__bar-desc">HTML/CSS 구조화, 반응형 구현, 크로스브라우징</span>
+                <span class="ptl__bar-name">Markup & Publishing</span>
+                <span class="ptl__bar-desc">Structuring HTML/CSS, responsive implementation, cross-browser support</span>
               </div>
               <div class="ptl__bar ptl__bar--3">
-                <span class="ptl__bar-name">인터랙션 & 개발 협업</span>
-                <span class="ptl__bar-desc">GSAP 애니메이션, 컴포넌트 구조화, 개발자 소통 및 수정 대응</span>
+                <span class="ptl__bar-name">Interaction & Dev Collaboration</span>
+                <span class="ptl__bar-desc">GSAP animation, component structuring, working with devs through revisions</span>
               </div>
             </div>
 
@@ -181,7 +181,7 @@ const PageAbout = {
                 <path d="M8 0L9.18 6.82L16 8L9.18 9.18L8 16L6.82 9.18L0 8L6.82 6.82L8 0Z" fill="currentColor"/>
               </svg>
               <p class="ptl__footer-text">
-                실무 프로젝트를 통해 정립된 웹 퍼블리싱 프로세스입니다.
+                A web publishing process refined through real client projects.
               </p>
             </div>
 
@@ -192,16 +192,16 @@ const PageAbout = {
           <h2 class="subpage__section-title">Skills</h2>
           <div class="skill-cards">
             ${[
-              { name: 'HTML5',       desc: '시맨틱 마크업 & 구조화',   icon: `<i class="devicon-html5-plain"></i>`,       color: '#E34F26' },
-              { name: 'CSS3',        desc: '레이아웃 & 스타일링',       icon: `<i class="devicon-css3-plain"></i>`,        color: '#1572B6' },
-              { name: 'JavaScript',  desc: '인터랙션 & 로직 구현',      icon: `<i class="devicon-javascript-plain"></i>`,  color: '#F7DF1E' },
-              { name: 'jQuery',      desc: 'DOM 조작 & 플러그인',       icon: `<i class="devicon-jquery-plain"></i>`,      color: '#0769AD' },
-              { name: 'GSAP',        desc: '고성능 웹 애니메이션',      color: '#88CE02', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M9.83 7.59c.817.005 1.437.238 1.842.692c.383.431.567 1.054.547 1.85l-.014.061a.16.16 0 0 1-.148.095h-1.659a.2.2 0 0 1-.199-.195q.002-.634-.39-.71l-.12-.011c-.342 0-.564.211-.57.579c-.007.41.225.783.885 1.423c.868.816 1.217 1.539 1.2 2.493c-.027 1.544-1.077 2.543-2.673 2.543c-.815 0-1.438-.219-1.853-.649c-.42-.437-.612-1.078-.572-1.906a.17.17 0 0 1 .049-.112a.16.16 0 0 1 .112-.045h1.716a.2.2 0 0 1 .069.017a.17.17 0 0 1 .083.098q.008.03.002.06c-.019.298.034.521.151.645a.4.4 0 0 0 .311.121c.317 0 .503-.225.51-.615c.006-.337-.102-.634-.682-1.232c-.751-.734-1.424-1.492-1.403-2.684a2.48 2.48 0 0 1 .774-1.781c.514-.482 1.216-.737 2.032-.737m-5.783.028c.747-.006 1.334.224 1.742.685c.432.487.651 1.221.652 2.182a.16.16 0 0 1-.161.158H4.479a.13.13 0 0 1-.084-.036a.13.13 0 0 1-.035-.085c-.014-.623-.188-.946-.532-.984l-.071-.004c-.69.001-1.097.938-1.313 1.458a5.5 5.5 0 0 0-.426 2.301c.015.366.074.88.42 1.093c.308.189.747.064 1.013-.146c.265-.209.479-.571.569-.901q.02-.07.001-.098q-.01-.011-.032-.015l-.504-.004a.18.18 0 0 1-.129-.06a.1.1 0 0 1-.025-.05a.1.1 0 0 1 0-.056l.316-1.374a.18.18 0 0 1 .157-.134v-.003h3.035l.021.001c.079.01.135.084.134.164v.004l-.316 1.371c-.017.078-.095.135-.184.135h-.381a.064.064 0 0 0-.061.046c-.352 1.194-.829 2.016-1.458 2.509c-.536.42-1.195.616-2.077.616c-.792 0-1.326-.255-1.779-.758c-.598-.666-.845-1.754-.695-3.067c.27-2.463 1.546-4.948 4.004-4.948m16.969.132c2.01 0 3.014.912 2.983 2.711c-.037 2.108-1.321 3.658-3.254 4.016q-.413.073-.833.068l-.934-.004a.06.06 0 0 0-.058.057q0 .015.008.029a.1.1 0 0 0 .022.021l.794.414q.098.053.076.164l-.207.933c-.017.078-.08.123-.171.123h-1.703a.2.2 0 0 1-.071-.015a.2.2 0 0 1-.058-.044a.12.12 0 0 1-.025-.107l1.896-8.241c.019-.086.1-.124.172-.124zm-3.743.012a.2.2 0 0 1 .051.033a.2.2 0 0 1 .034.052a.2.2 0 0 1 .011.059l-.011 8.213a.14.14 0 0 1-.003.058a.14.14 0 0 1-.081.091a.14.14 0 0 1-.064.013h-1.813a.16.16 0 0 1-.111-.045a.2.2 0 0 1-.033-.051a.2.2 0 0 1-.012-.06l.039-.797c.002-.087 0-.111-.051-.117l-.068-.002h-1.714c-.124 0-.133.011-.177.125l-.356.857q-.048.09-.192.09h-1.795c-.109 0-.187-.108-.146-.209l3.718-8.199c.025-.049.063-.123.149-.123h2.566q.03 0 .059.012M15.5 9.985c-.008-.032-.034-.029-.055.013a1 1 0 0 0-.04.093l-1.284 3.183l-.016.048q-.002.01-.001.019l.007.017a.04.04 0 0 0 .015.012a.04.04 0 0 0 .017.006l1.072.014c.119-.01.125-.016.137-.137c.002-.043.154-3.231.148-3.268m4.612-.403a.06.06 0 0 0-.04.017a.06.06 0 0 0-.018.04a.06.06 0 0 0 .03.051l.842.445c.042.023.043.063.029.132c-.007.031-.54 2.375-.539 2.377c.003.003.019.011.099.011h.036c.895-.036 1.383-1.094 1.401-2.121c.009-.555-.18-.896-.523-.946l-.071-.006z"/></svg>`, color: null },
-              { name: 'Three.js',    desc: '3D 웹 그래픽 렌더링',       icon: `<i class="devicon-threejs-original"></i>`,  color: '#ffffff' },
-              { name: 'Git',         desc: '버전 관리 & 협업',          icon: `<i class="devicon-git-plain"></i>`,         color: '#F05032' },
-              { name: 'Figma',       desc: '디자인 시안 해석',          icon: `<i class="devicon-figma-plain"></i>`,       color: '#F24E1E' },
-              { name: 'Photoshop',   desc: '이미지 편집 & 보정',        icon: `<i class="devicon-photoshop-plain"></i>`,   color: '#31A8FF' },
-              { name: 'Illustrator', desc: '벡터 그래픽 & 에셋',        icon: `<i class="devicon-illustrator-plain"></i>`, color: '#FF9A00' },
+              { name: 'HTML5',       desc: 'Semantic markup & structure',   icon: `<i class="devicon-html5-plain"></i>`,       color: '#E34F26' },
+              { name: 'CSS3',        desc: 'Layout & styling',       icon: `<i class="devicon-css3-plain"></i>`,        color: '#1572B6' },
+              { name: 'JavaScript',  desc: 'Interaction & logic',      icon: `<i class="devicon-javascript-plain"></i>`,  color: '#F7DF1E' },
+              { name: 'jQuery',      desc: 'DOM manipulation & plugins',       icon: `<i class="devicon-jquery-plain"></i>`,      color: '#0769AD' },
+              { name: 'GSAP',        desc: 'High-performance web animation',      color: '#88CE02', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M9.83 7.59c.817.005 1.437.238 1.842.692c.383.431.567 1.054.547 1.85l-.014.061a.16.16 0 0 1-.148.095h-1.659a.2.2 0 0 1-.199-.195q.002-.634-.39-.71l-.12-.011c-.342 0-.564.211-.57.579c-.007.41.225.783.885 1.423c.868.816 1.217 1.539 1.2 2.493c-.027 1.544-1.077 2.543-2.673 2.543c-.815 0-1.438-.219-1.853-.649c-.42-.437-.612-1.078-.572-1.906a.17.17 0 0 1 .049-.112a.16.16 0 0 1 .112-.045h1.716a.2.2 0 0 1 .069.017a.17.17 0 0 1 .083.098q.008.03.002.06c-.019.298.034.521.151.645a.4.4 0 0 0 .311.121c.317 0 .503-.225.51-.615c.006-.337-.102-.634-.682-1.232c-.751-.734-1.424-1.492-1.403-2.684a2.48 2.48 0 0 1 .774-1.781c.514-.482 1.216-.737 2.032-.737m-5.783.028c.747-.006 1.334.224 1.742.685c.432.487.651 1.221.652 2.182a.16.16 0 0 1-.161.158H4.479a.13.13 0 0 1-.084-.036a.13.13 0 0 1-.035-.085c-.014-.623-.188-.946-.532-.984l-.071-.004c-.69.001-1.097.938-1.313 1.458a5.5 5.5 0 0 0-.426 2.301c.015.366.074.88.42 1.093c.308.189.747.064 1.013-.146c.265-.209.479-.571.569-.901q.02-.07.001-.098q-.01-.011-.032-.015l-.504-.004a.18.18 0 0 1-.129-.06a.1.1 0 0 1-.025-.05a.1.1 0 0 1 0-.056l.316-1.374a.18.18 0 0 1 .157-.134v-.003h3.035l.021.001c.079.01.135.084.134.164v.004l-.316 1.371c-.017.078-.095.135-.184.135h-.381a.064.064 0 0 0-.061.046c-.352 1.194-.829 2.016-1.458 2.509c-.536.42-1.195.616-2.077.616c-.792 0-1.326-.255-1.779-.758c-.598-.666-.845-1.754-.695-3.067c.27-2.463 1.546-4.948 4.004-4.948m16.969.132c2.01 0 3.014.912 2.983 2.711c-.037 2.108-1.321 3.658-3.254 4.016q-.413.073-.833.068l-.934-.004a.06.06 0 0 0-.058.057q0 .015.008.029a.1.1 0 0 0 .022.021l.794.414q.098.053.076.164l-.207.933c-.017.078-.08.123-.171.123h-1.703a.2.2 0 0 1-.071-.015a.2.2 0 0 1-.058-.044a.12.12 0 0 1-.025-.107l1.896-8.241c.019-.086.1-.124.172-.124zm-3.743.012a.2.2 0 0 1 .051.033a.2.2 0 0 1 .034.052a.2.2 0 0 1 .011.059l-.011 8.213a.14.14 0 0 1-.003.058a.14.14 0 0 1-.081.091a.14.14 0 0 1-.064.013h-1.813a.16.16 0 0 1-.111-.045a.2.2 0 0 1-.033-.051a.2.2 0 0 1-.012-.06l.039-.797c.002-.087 0-.111-.051-.117l-.068-.002h-1.714c-.124 0-.133.011-.177.125l-.356.857q-.048.09-.192.09h-1.795c-.109 0-.187-.108-.146-.209l3.718-8.199c.025-.049.063-.123.149-.123h2.566q.03 0 .059.012M15.5 9.985c-.008-.032-.034-.029-.055.013a1 1 0 0 0-.04.093l-1.284 3.183l-.016.048q-.002.01-.001.019l.007.017a.04.04 0 0 0 .015.012a.04.04 0 0 0 .017.006l1.072.014c.119-.01.125-.016.137-.137c.002-.043.154-3.231.148-3.268m4.612-.403a.06.06 0 0 0-.04.017a.06.06 0 0 0-.018.04a.06.06 0 0 0 .03.051l.842.445c.042.023.043.063.029.132c-.007.031-.54 2.375-.539 2.377c.003.003.019.011.099.011h.036c.895-.036 1.383-1.094 1.401-2.121c.009-.555-.18-.896-.523-.946l-.071-.006z"/></svg>`, color: null },
+              { name: 'Three.js',    desc: '3D web graphics rendering',       icon: `<i class="devicon-threejs-original"></i>`,  color: '#ffffff' },
+              { name: 'Git',         desc: 'Version control & collaboration',          icon: `<i class="devicon-git-plain"></i>`,         color: '#F05032' },
+              { name: 'Figma',       desc: 'Interpreting design mockups',          icon: `<i class="devicon-figma-plain"></i>`,       color: '#F24E1E' },
+              { name: 'Photoshop',   desc: 'Image editing & retouching',        icon: `<i class="devicon-photoshop-plain"></i>`,   color: '#31A8FF' },
+              { name: 'Illustrator', desc: 'Vector graphics & assets',        icon: `<i class="devicon-illustrator-plain"></i>`, color: '#FF9A00' },
             ].map(s => `
               <div class="skill-card"${s.color ? ` style="--icon-color:${s.color}"` : ''}>
                 <div class="skill-card__icon">${s.icon}</div>
@@ -220,7 +220,7 @@ const PageAbout = {
                 <span class="about-github__label">GitHub</span>
                 <h3 class="about-github__card-title">Contributions</h3>
               </div>
-              <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" rel="noopener" class="about-github__link" aria-label="GitHub 프로필">
+              <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" rel="noopener" class="about-github__link" aria-label="GitHub profile">
                 <i class="devicon-github-original"></i>
               </a>
             </div>
@@ -274,7 +274,7 @@ const PageAbout = {
       gsap.set(inners, { yPercent: 110 });
     }
 
-    // Work Process 제목 — 스크롤 없이 바로 보이는 화면이라 ScrollTrigger 대신 커튼 콜백 기준으로 처리
+    // Work Process title — visible without scrolling, so it's driven by the curtain callback instead of ScrollTrigger
     const processTitleEl = document.querySelector('#process .subpage__section-title');
     let processChars;
     if (processTitleEl) {
@@ -299,7 +299,7 @@ const PageAbout = {
       if (inners) gsap.to(inners, { yPercent: 0, duration: 0.6, ease: 'power2.out', stagger: 0.07, delay: 0.45 });
       if (processChars) gsap.to(processChars, { yPercent: 0, duration: 0.6, ease: 'power3.out', stagger: 0.06, delay: 0.7 });
 
-      // Work Process — 커튼/인트로가 사라지는 시점부터 같은 기준으로 시작 (고정 delay는 새로고침 시 인트로 뒤에서 먼저 끝나버림)
+      // Work Process — starts on the same beat as the curtain/intro reveal (a fixed delay would finish before the intro on refresh)
       if (ptlEl) {
         gsap.timeline({ delay: 1.0 })
           .fromTo('.ptl', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' })
@@ -342,7 +342,7 @@ const PageAbout = {
       scrollTrigger: { trigger: '.about-skills', start: 'top 80%' },
     });
 
-    // Commit Log animations — 폴드 아래 위치, ScrollTrigger 사용
+    // Commit Log animations — positioned below the fold, uses ScrollTrigger
     const calAnim = { ready: false, trigger: null };
     if (document.querySelector('.about-github__card')) {
       gsap.timeline({

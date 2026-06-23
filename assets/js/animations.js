@@ -1,5 +1,5 @@
 // =============================
-// Hero 입장 애니메이션 (인트로 완료 후 호출)
+// Hero entrance animation (called after intro completes)
 // =============================
 function initHeroEntrance() {
   gsap.from('.hero__box', {
@@ -21,8 +21,8 @@ function initHeroEntrance() {
   }
 }
 
-// 헤더 nav가 비대칭 레이아웃(About/Works/토글)이라 sparkle의 실제 가로 위치가
-// 뷰포트 중앙과 다름 — 인비저블 sparkle의 실측 위치를 fixed 트윈에 동기화
+// The header nav has an asymmetric layout (About/Works/toggle), so the sparkle's actual
+// horizontal position differs from the viewport center — sync the invisible sparkle's measured position to the fixed tween
 function syncSparklePosition() {
   const sparkle = document.querySelector('.header__sparkle');
   const sparkleFxd = document.querySelector('.header__sparkle-fixed');
@@ -32,7 +32,7 @@ function syncSparklePosition() {
 }
 
 // =============================
-// Header 입장 — 커튼 중간 지점(__onCurtainMid)에 맞춰 히어로 텍스트와 동일한 슬라이드+페이드
+// Header entrance — slides + fades in sync with the hero text, timed to the curtain midpoint (__onCurtainMid)
 // =============================
 let __headerRevealed = false;
 function revealHeader() {
@@ -57,7 +57,7 @@ function revealHeader() {
 }
 
 // =============================
-// About 가로 스크롤 마퀴
+// About horizontal scroll marquee
 // =============================
 function initAboutScroll() {
   const track = document.querySelector('.about__marquee-track');
@@ -78,10 +78,10 @@ function initAboutScroll() {
 }
 
 // =============================
-// Works 타이틀 + 리스트 스크롤 리빌
+// Works title + list scroll reveal
 // =============================
 function initWorksReveal() {
-  // 타이틀 글자 분리
+  // split title into characters
   const label = document.querySelector('.works__label');
   if (label) {
     label.innerHTML = label.textContent.split('').map(ch =>
@@ -102,7 +102,7 @@ function initWorksReveal() {
     });
   }
 
-  // 서브텍스트 클립마스크 우측 등장 (타이틀 완료 후)
+  // subtext clip-mask reveal from the right (after the title finishes)
   const sub = document.querySelector('.works__sub');
   if (sub) {
     gsap.from(sub, {
@@ -117,7 +117,7 @@ function initWorksReveal() {
     });
   }
 
-  // 리스트 아이템 왼쪽 등장 (홈페이지 전용 — 서브페이지 .works__item과 분리)
+  // list items reveal from the left (home page only — separate from subpage .works__item)
   const items = document.querySelectorAll('#home-view .works__item');
   if (items.length) {
     const listTl = gsap.timeline({
@@ -135,7 +135,7 @@ function initWorksReveal() {
 }
 
 // =============================
-// Hero/About/Works 스크롤 색상 리빌 — 테마 색상 반영
+// Hero/About/Works scroll color reveal — reflects theme colors
 // =============================
 let _colorRevealTls = [];
 
@@ -181,7 +181,7 @@ function refreshScrollColorReveals() {
 }
 
 // =============================
-// Footer Big 텍스트 — 높이 기준 fit
+// Footer big text — fit based on height
 // =============================
 function initFooterBig() {
   const top = document.querySelector('.footer__top');
@@ -190,22 +190,22 @@ function initFooterBig() {
   if (!top || !big || !footer) return;
 
   function fit() {
-    // JS 오버라이드 초기화 → CSS 기본값(50vh)으로 리플로우
+    // reset JS override → reflow back to the CSS default (50vh)
     document.documentElement.style.removeProperty('--footer-height');
 
-    // 텍스트 제거 후 footer__top 순수 높이 측정
+    // measure footer__top's raw height after removing the text
     big.style.display = 'none';
     const availH = top.clientHeight;
     big.style.display = '';
 
-    // CSS vw 기반 너비 제약값 측정
+    // measure the CSS vw-based width constraint
     big.style.fontSize = '';
     const cssSize = parseFloat(getComputedStyle(big).fontSize);
 
-    // 높이와 너비 중 작은 쪽으로 확정
+    // settle on whichever is smaller, height or width
     big.style.fontSize = Math.min(availH, cssSize) + 'px';
 
-    // offsetHeight 읽기 자체가 동기 reflow 강제 → rAF 불필요
+    // reading offsetHeight itself forces a synchronous reflow → no rAF needed
     document.documentElement.style.setProperty('--footer-height', footer.offsetHeight + 'px');
     ScrollTrigger.refresh();
     if (window.__lenis) window.__lenis.resize();
@@ -221,10 +221,10 @@ function initFooterBig() {
 }
 
 // =============================
-// About 텍스트 스크롤 spotlight
+// About text scroll spotlight
 // =============================
 function initAboutTextScroll() {
-  // 타이틀 글자 분리 (works__label과 동일)
+  // split title into characters (same as works__label)
   const label = document.querySelector('.about-text__label');
   if (label) {
     label.innerHTML = label.textContent.split('').map(ch =>
@@ -267,7 +267,7 @@ function initAboutTextScroll() {
 }
 
 // =============================
-// Hero 타이틀 스크롤 마스킹
+// Hero title scroll masking
 // =============================
 function initHeroTaglineScroll() {
   const title   = document.querySelector('.hero__title');
@@ -353,7 +353,7 @@ function initHobbyPopcorn() {
   const container = document.getElementById('hobbyPopcorn');
   if (!btn || !container || typeof Matter === 'undefined') return;
 
-  // 아이콘 shape 따라 베이지 아웃라인 SVG 필터
+  // beige outline SVG filter that follows the icon shape
   if (!document.getElementById('icon-outline-filter')) {
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('id', 'icon-outline-filter');
@@ -376,7 +376,7 @@ function initHobbyPopcorn() {
 
   const isMobile = window.innerWidth <= 768;
   const S = isMobile ? 0.6 : 1;
-  // 아래 12개는 예시 아이콘입니다. 본인이 좋아하는 것(브랜드 로고, 굿즈, 취미 아이콘 등)으로 교체하세요.
+  // The 12 entries below are example icons. Replace them with things you're into (brand logos, merch, hobby icons, etc.).
   const iconStyle = (size) => `display:block;width:${Math.round(size*S)}px;height:${Math.round(size*S)}px;line-height:${Math.round(size*S)}px;font-size:${Math.round(size*S)}px;color:#1C1A17;text-align:center;`;
   const ICONS = [
     `<i class="fa-solid fa-star" style="${iconStyle(48)}"></i>`,
@@ -483,7 +483,7 @@ function initHobbyPopcorn() {
     }
   }
 
-  // 버튼 초기 중앙 위치 설정
+  // set the button's initial centered position
   function centerBtn() {
     const cW = container.offsetWidth;
     const cH = container.offsetHeight;
@@ -494,7 +494,7 @@ function initHobbyPopcorn() {
   window.addEventListener('resize', centerBtn);
   window.__centerHobbyBtn = centerBtn;
 
-  // 드래그 + 쉐이크 감지
+  // drag + shake detection
   let isDragging = false;
   let offsetX = 0, offsetY = 0;
   let lastX = 0;
@@ -533,13 +533,13 @@ function initHobbyPopcorn() {
     const dx = x - lastX;
     lastX = x;
 
-    // 컨테이너 내 위치 이동 (경계 클램프)
+    // move within the container (clamped to bounds)
     const newLeft = Math.min(Math.max(x - cRect.left - offsetX, 0), cRect.width  - btn.offsetWidth);
     const newTop  = Math.min(Math.max(y - cRect.top  - offsetY, 0), cRect.height - btn.offsetHeight);
     btn.style.left = newLeft + 'px';
     btn.style.top  = newTop  + 'px';
 
-    // 쉐이크 감지
+    // shake detection
     if (Math.abs(dx) > 4) {
       const dir = dx > 0 ? 1 : -1;
       const now = Date.now();

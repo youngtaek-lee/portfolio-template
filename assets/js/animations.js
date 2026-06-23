@@ -377,19 +377,20 @@ function initHobbyPopcorn() {
   const isMobile = window.innerWidth <= 768;
   const S = isMobile ? 0.6 : 1;
   // 아래 12개는 예시 아이콘입니다. 본인이 좋아하는 것(브랜드 로고, 굿즈, 취미 아이콘 등)으로 교체하세요.
+  const iconStyle = (size) => `display:block;width:${Math.round(size*S)}px;height:${Math.round(size*S)}px;line-height:${Math.round(size*S)}px;font-size:${Math.round(size*S)}px;color:#1C1A17;text-align:center;`;
   const ICONS = [
-    `<img src="assets/images/hobby/icon-star.svg" width="${Math.round(54*S)}" height="${Math.round(54*S)}" style="display:block;">`,
-    `<img src="assets/images/hobby/icon-heart.svg" width="${Math.round(54*S)}" height="${Math.round(54*S)}" style="display:block;">`,
-    `<img src="assets/images/hobby/icon-music.svg" width="${Math.round(54*S)}" height="${Math.round(54*S)}" style="display:block;">`,
-    `<img src="assets/images/hobby/icon-camera.svg" width="${Math.round(54*S)}" height="${Math.round(54*S)}" style="display:block;">`,
-    `<img src="assets/images/hobby/icon-coffee.svg" width="${Math.round(54*S)}" height="${Math.round(54*S)}" style="display:block;">`,
-    `<img src="assets/images/hobby/icon-book.svg" width="${Math.round(54*S)}" height="${Math.round(54*S)}" style="display:block;">`,
-    `<img src="assets/images/hobby/icon-controller.svg" width="${Math.round(44*S)}" height="${Math.round(44*S)}" style="display:block;">`,
-    `<img src="assets/images/hobby/icon-headphones.svg" width="${Math.round(44*S)}" height="${Math.round(44*S)}" style="display:block;">`,
-    `<img src="assets/images/hobby/icon-brush.svg" width="${Math.round(42*S)}" height="${Math.round(42*S)}" style="display:block;">`,
-    `<img src="assets/images/hobby/icon-plane.svg" width="${Math.round(46*S)}" height="${Math.round(46*S)}" style="display:block;">`,
-    `<img src="assets/images/hobby/icon-mountain.svg" height="${Math.round(32*S)}" style="display:block;width:auto;">`,
-    `<img src="assets/images/hobby/icon-bike.svg" width="${Math.round(44*S)}" height="${Math.round(44*S)}" style="display:block;">`,
+    `<i class="fa-solid fa-star" style="${iconStyle(48)}"></i>`,
+    `<i class="fa-solid fa-heart" style="${iconStyle(48)}"></i>`,
+    `<i class="fa-solid fa-music" style="${iconStyle(48)}"></i>`,
+    `<i class="fa-solid fa-camera" style="${iconStyle(48)}"></i>`,
+    `<i class="fa-solid fa-mug-hot" style="${iconStyle(48)}"></i>`,
+    `<i class="fa-solid fa-book" style="${iconStyle(48)}"></i>`,
+    `<i class="fa-solid fa-gamepad" style="${iconStyle(48)}"></i>`,
+    `<i class="fa-solid fa-headphones" style="${iconStyle(48)}"></i>`,
+    `<i class="fa-solid fa-paintbrush" style="${iconStyle(44)}"></i>`,
+    `<i class="fa-solid fa-plane" style="${iconStyle(44)}"></i>`,
+    `<i class="fa-solid fa-mountain" style="${iconStyle(44)}"></i>`,
+    `<i class="fa-solid fa-bicycle" style="${iconStyle(44)}"></i>`,
   ];
   const active = [];
   let statics = null;

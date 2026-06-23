@@ -44,8 +44,8 @@ HTML / CSS / Vanilla JS + GSAP 기반 웹 퍼블리셔·프론트엔드 포트�
 - 하단 CTA 이메일 (`mailto:hello@yourdomain.com`)
 
 ### 6. Hobby 섹션 — `assets/js/animations.js`
-- `initHobbyPopcorn()`의 `ICONS` 배열에 본인이 좋아하는 것(브랜드 로고, 굿즈, 취미 아이콘 등)으로 교체하세요. 기본값은 `assets/images/hobby/`에 들어있는 예시 아이콘입니다.
-- 저작권이 있는 브랜드 로고를 쓸 경우, 해당 브랜드 사용 정책을 직접 확인하세요.
+- `initHobbyPopcorn()`의 `ICONS` 배열에 본인이 좋아하는 것을 채우세요. 기본값은 Font Awesome 아이콘(별, 하트, 음악 등) 예시입니다.
+- Font Awesome 아이콘 클래스명을 바꾸거나(`fa-solid fa-xxx`), 브랜드 로고 이미지(`<img>`)로 바꿔도 됩니다. 브랜드 로고를 쓸 경우 해당 브랜드 사용 정책을 직접 확인하세요.
 
 ### 7. 메타 정보 — `index.html` `<head>`
 - `<title>`, `description`, `og:title`, `og:description`

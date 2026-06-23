@@ -49,7 +49,8 @@ HTML / CSS / Vanilla JS + GSAP 기반 웹 퍼블리셔·프론트엔드 포트�
 
 ### 7. 메타 정보 — `index.html` `<head>`
 - `<title>`, `description`, `og:title`, `og:description`
-- `og:image`는 현재 주석 처리되어 있습니다. 1200×630 이미지를 추가하고 주석을 해제하세요.
+- `og:image`는 기본 예시 이미지(`assets/images/og-image.jpg`)가 들어있습니다. 본인 작업물 캡처로 교체하세요 (1200×630 권장).
+- `favicon`(`assets/images/favicon.svg`)도 본인 로고/이니셜로 교체하면 좋습니다.
 
 ## 테마
 헤더의 토글 스위치로 다크/서머(라이트 톤) 테마를 전환할 수 있습니다. 색상 변수는 `assets/css/base.css`의 `:root` / `[data-theme="..."]`에서 관리합니다.

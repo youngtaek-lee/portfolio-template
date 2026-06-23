@@ -1,6 +1,6 @@
 # Portfolio Template
 
-A web publisher / front-end portfolio template built with HTML / CSS / Vanilla JS + GSAP.
+A creative developer / designer portfolio template built with HTML / CSS / Vanilla JS + GSAP.
 No build tools required — it runs from static files alone, so you can serve it with a local server (Live Server, etc.) or deploy it to any static host as-is.
 
 ## Structure

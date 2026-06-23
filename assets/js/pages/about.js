@@ -131,7 +131,7 @@ const PageAbout = {
         <section class="subpage__hero">
           <h1 class="subpage__title">Hello</h1>
           <div class="about-intro__text">
-            <p>Hi, I'm a web publisher<br>standing somewhere between design and code.<br>I'm obsessive about implementing visuals with precision,<br>and lately I've been pushing into front-end development to widen that ground.<br>If you've got something worth building together, reach out.</p>
+            <p>Hi, I'm a creative developer<br>working in the space between design and motion.<br>I obsess over turning static visuals into interfaces that move, respond, and feel alive,<br>and I'm always pushing further into front-end engineering to back that up.<br>If you've got something worth building together, reach out.</p>
           </div>
         </section>
 
@@ -141,7 +141,7 @@ const PageAbout = {
 
             <div class="ptl__header">
               <div>
-                <span class="ptl__label">Web Publishing</span>
+                <span class="ptl__label">Creative Development</span>
                 <h3 class="ptl__title">How I work</h3>
               </div>
             </div>
@@ -158,7 +158,7 @@ const PageAbout = {
                 <span class="ptl__bar-desc">Reviewing mockups, mapping structure, organizing assets</span>
               </div>
               <div class="ptl__bar ptl__bar--2">
-                <span class="ptl__bar-name">Markup & Publishing</span>
+                <span class="ptl__bar-name">Markup & Build</span>
                 <span class="ptl__bar-desc">Structuring HTML/CSS, responsive implementation, cross-browser support</span>
               </div>
               <div class="ptl__bar ptl__bar--3">
@@ -181,7 +181,7 @@ const PageAbout = {
                 <path d="M8 0L9.18 6.82L16 8L9.18 9.18L8 16L6.82 9.18L0 8L6.82 6.82L8 0Z" fill="currentColor"/>
               </svg>
               <p class="ptl__footer-text">
-                A web publishing process refined through real client projects.
+                A creative development process refined through real client projects.
               </p>
             </div>
 
